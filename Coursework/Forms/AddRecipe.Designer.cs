@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            backButton = new Button();
             saveRecipeButton = new Button();
             ingredientsBox = new TextBox();
             label3 = new Label();
@@ -41,6 +42,7 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(backButton);
             panel1.Controls.Add(saveRecipeButton);
             panel1.Controls.Add(ingredientsBox);
             panel1.Controls.Add(label3);
@@ -50,23 +52,39 @@
             panel1.Controls.Add(label1);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(824, 563);
+            panel1.Size = new Size(824, 580);
             panel1.TabIndex = 0;
+            // 
+            // backButton
+            // 
+            backButton.BackColor = Color.FromArgb(64, 64, 64);
+            backButton.Font = new Font("Segoe UI", 14F);
+            backButton.ForeColor = Color.White;
+            backButton.Location = new Point(617, 526);
+            backButton.Name = "backButton";
+            backButton.Size = new Size(204, 51);
+            backButton.TabIndex = 7;
+            backButton.Text = "Назад";
+            backButton.UseVisualStyleBackColor = false;
+            backButton.Click += backButton_Click;
             // 
             // saveRecipeButton
             // 
-            saveRecipeButton.Font = new Font("Segoe UI", 12F);
-            saveRecipeButton.Location = new Point(292, 526);
+            saveRecipeButton.BackColor = Color.FromArgb(64, 64, 64);
+            saveRecipeButton.Font = new Font("Segoe UI", 14F);
+            saveRecipeButton.ForeColor = Color.White;
+            saveRecipeButton.Location = new Point(301, 526);
             saveRecipeButton.Name = "saveRecipeButton";
-            saveRecipeButton.Size = new Size(262, 34);
+            saveRecipeButton.Size = new Size(234, 51);
             saveRecipeButton.TabIndex = 6;
             saveRecipeButton.Text = "Зберегти рецепт";
-            saveRecipeButton.UseVisualStyleBackColor = true;
+            saveRecipeButton.UseVisualStyleBackColor = false;
             saveRecipeButton.Click += saveRecipeButton_Click;
             // 
             // ingredientsBox
             // 
-            ingredientsBox.Font = new Font("Segoe UI", 12F);
+            ingredientsBox.BackColor = Color.Silver;
+            ingredientsBox.Font = new Font("Segoe UI", 14F);
             ingredientsBox.Location = new Point(112, 110);
             ingredientsBox.Multiline = true;
             ingredientsBox.Name = "ingredientsBox";
@@ -76,17 +94,19 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(301, 79);
+            label3.Font = new Font("Segoe UI", 14F);
+            label3.Location = new Point(301, 75);
             label3.Name = "label3";
-            label3.Size = new Size(286, 28);
+            label3.Size = new Size(346, 32);
             label3.TabIndex = 4;
             label3.Text = "Введіть інгредієнти до страви:";
             // 
             // recipeBox
             // 
-            recipeBox.Font = new Font("Segoe UI", 12F);
+            recipeBox.BackColor = Color.Silver;
+            recipeBox.Font = new Font("Segoe UI", 14F);
             recipeBox.Location = new Point(112, 256);
+            recipeBox.MaxLength = 499;
             recipeBox.Multiline = true;
             recipeBox.Name = "recipeBox";
             recipeBox.Size = new Size(613, 249);
@@ -95,28 +115,30 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(301, 225);
+            label2.Font = new Font("Segoe UI", 14F);
+            label2.Location = new Point(301, 221);
             label2.Name = "label2";
-            label2.Size = new Size(218, 28);
+            label2.Size = new Size(266, 32);
             label2.TabIndex = 2;
             label2.Text = "Введіть рецепт страви:";
             // 
             // nameBox
             // 
-            nameBox.Font = new Font("Segoe UI", 12F);
+            nameBox.BackColor = Color.Silver;
+            nameBox.Font = new Font("Segoe UI", 14F);
             nameBox.Location = new Point(112, 31);
+            nameBox.MaxLength = 49;
             nameBox.Name = "nameBox";
-            nameBox.Size = new Size(613, 34);
+            nameBox.Size = new Size(613, 39);
             nameBox.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(301, 0);
+            label1.Font = new Font("Segoe UI", 14F);
+            label1.Location = new Point(301, -4);
             label1.Name = "label1";
-            label1.Size = new Size(206, 28);
+            label1.Size = new Size(250, 32);
             label1.TabIndex = 0;
             label1.Text = "Введіть назву страви:";
             // 
@@ -124,8 +146,11 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(848, 587);
+            BackColor = Color.DimGray;
+            ClientSize = new Size(848, 604);
             Controls.Add(panel1);
+            MaximumSize = new Size(866, 651);
+            MinimumSize = new Size(866, 651);
             Name = "AddRecipe";
             Text = "AddRecipe";
             panel1.ResumeLayout(false);
@@ -143,5 +168,6 @@
         private Label label3;
         private TextBox ingredientsBox;
         private Button saveRecipeButton;
+        private Button backButton;
     }
 }

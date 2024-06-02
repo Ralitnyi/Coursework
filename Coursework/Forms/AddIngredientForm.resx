@@ -117,32 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="recipeBindingSource2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>649, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="removeButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        /9j/4AAQSkZJRgABAQEAAAAAAAD/4QAuRXhpZgAATU0AKgAAAAgAAkAAAAMAAAABAAAAAEABAAEAAAAB
-        AAAAAAAAAAD/2wBDAAoHBwkHBgoJCAkLCwoMDxkQDw4ODx4WFxIZJCAmJSMgIyIoLTkwKCo2KyIjMkQy
-        Njs9QEBAJjBGS0U+Sjk/QD3/2wBDAQsLCw8NDx0QEB09KSMpPT09PT09PT09PT09PT09PT09PT09PT09
-        PT09PT09PT09PT09PT09PT09PT09PT09PT3/wAARCABKAEoDASIAAhEBAxEB/8QAGwABAAMBAQEBAAAA
-        AAAAAAAAAAUGBwMCBAH/xAA6EAAABQMCAgYGCAcAAAAAAAAAAQIDBAUGEQchEjETFGFxgcEiN0FCkaEI
-        M1FykrPC0RUXI1NVlKL/xAAVAQEBAAAAAAAAAAAAAAAAAAAAAf/EABQRAQAAAAAAAAAAAAAAAAAAAAD/
-        2gAMAwEAAhEDEQA/AMyAABQBK2yzS5FwRUV1/oKdxGbqjzvgtk5LcsnjcaXM0noVaYOVbVV6NJ7kRLJ9
-        ruznJfEwGPgNLo2j01VWfj1xZoidEampMRxJka8lsZKLPIz9ns5ijXDS2aLXpdOjzClpjr4DdJHDk/aW
-        Ozl9gCNAAAAAAAAAAHeHNlU58n4Mh6M6XvsrNB/IXHS+iUi4qrNg1eH05pZJ5tfSqRw4MiMsEZZ5kfgL
-        6zY1hSKq9TWWWlzWU8TjCZbhqSXaXF2l8QFGo2rtfp3CicTNRaLb+oXA5j7yfMhak3vZF3oJqvwkR3j2
-        4pLfLudTuXjgSUiwbEiTWIclllqTI+paXMWSnO4uLcdJmnVlU6MqRNiojspxlx2WtKSz2moEVyr6TUmV
-        AdqFvVbhaSg1klxZOtHgs7LLcvHIyYjyRH9o264LSty3rPqVTpcZxOYx8JtTXSS4SvRLOFYUW/bkYjyB
-        QAAAAAAXbSN82r7aR/ejuo+RK/SJ+jF1bXuc3y6RTvzbJXkKfp3I6tf1IVnHE6bf4kqLzFxkn1X6QLKu
-        ROmn/pgy8gDUP1r293R/zjExrS8SLRjN+1c1PySsxD6h+te3e6P+cY+nXJ0yplKZL3nnVfBOP1AjrdR9
-        Q0RgMcjdYio+OFeQxsbBqsvqlh0WFyy62WOxDR/uMfBQAAAAAASdtSOq3RSn+XRzGjP8ZDQrrLq2uFHc
-        5E4cf5mpIy1pw2XkOlzQoll4HnyGsXtFk1O/LYqtMjPSY7yGFJdaQak7OcW5lsWx53ActQ/Wvb3dH/OM
-        NaFdPVqFEL2ks8feWgh9F/QZT+qduusxnnGz6H00oM0+i6Zq35Fgtx51GgyZ+pNvNNx3ltGTZcaUGafr
-        TNW/YREZgjlre+RHRYqfdJ1ePwkXmMoGhazzG37sjR21ko48UiWRe6pSjPHwwfiM9BQAAAAAABP0W96/
-        b8Xq1OqCkR85JtaErSnu4i28BAAAuH81bs/yLf8ArN/sPK9UrscQpP8AEkpyWMpjtkZfIVEAHR992U+4
-        /IcW684o1LWs8qUZ8zMxzAAAAH6A/9k=
-</value>
-  </data>
 </root>

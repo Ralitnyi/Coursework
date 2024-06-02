@@ -14,12 +14,18 @@ namespace Coursework.Forms
     public partial class MainForm : Form
     {
         private RecipeManager _recipeManager;
+        private Inventory _inventory;
+        private MenuForm _menuForm;
+        private RecipeBookForm _recipeBookForm;
+
         public MainForm()
         {
             InitializeComponent();
             _recipeManager = new RecipeManager();
-            MenuForm menuForm = new MenuForm(this, _recipeManager);
-            LoadFormInPanel(menuForm);
+            _inventory = new Inventory();
+            _recipeBookForm = new RecipeBookForm(this);
+            _menuForm = new MenuForm(this);
+            LoadFormInPanel(_menuForm);
         }
 
         public void LoadFormInPanel(Form form)
@@ -35,11 +41,27 @@ namespace Coursework.Forms
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             _recipeManager.SaveRecipes();
+            MenuForm.SaveMenu();
         }
+
 
         public RecipeManager RecipeManager
         {
             get { return _recipeManager; }
+        }
+        public Inventory Inventory
+        {
+            get { return _inventory; }
+        }
+
+        public MenuForm MenuForm
+        {
+            get { return _menuForm; }
+        }
+
+        public RecipeBookForm RecipeBookForm
+        {
+            get { return _recipeBookForm; }
         }
 
     }

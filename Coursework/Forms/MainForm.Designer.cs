@@ -36,17 +36,19 @@
             mainPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             mainPanel.Location = new Point(12, 12);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(1092, 638);
+            mainPanel.Size = new Size(1194, 725);
             mainPanel.TabIndex = 0;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1116, 662);
+            BackColor = Color.DimGray;
+            ClientSize = new Size(1218, 749);
             Controls.Add(mainPanel);
+            MinimumSize = new Size(1236, 796);
             Name = "MainForm";
-            Text = "MainForm";
+            Text = "Шеф-кухар";
             ResumeLayout(false);
         }
 

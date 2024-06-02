@@ -1,88 +1,86 @@
 ﻿using Coursework.Forms;
 using Coursework.Models;
+using System.Xml.Linq;
 
 namespace Coursework
 {
     public partial class RecipeBookForm : Form
     {
-        private RecipeManager _recipeManager;
         private MainForm _mainForm;
+        private string _originalRecipeName;
 
-        public RecipeBookForm(MainForm mainForm, RecipeManager recipeManager)
+        public RecipeBookForm(MainForm mainForm)
         {
             InitializeComponent();
             _mainForm = mainForm;
-            _recipeManager = recipeManager;
             UpdateRecipeList();
-        }
-
-        private void recipeslistBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SearchButton_Click(object sender, EventArgs e)
-        {
-
-            // remove later
-            UpdateRecipeList();
-
-        }
-
-        private void RecipeBookForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void backButton_Click(object sender, EventArgs e)
         {
-            _mainForm.LoadFormInPanel(new MenuForm(_mainForm, _recipeManager));
+            _mainForm.LoadFormInPanel(_mainForm.MenuForm);
         }
 
         private void newRecipeButton_Click(object sender, EventArgs e)
         {
-            AddRecipe addRecipe = new AddRecipe(_recipeManager);
+            AddRecipe addRecipe = new AddRecipe(_mainForm);
             addRecipe.ShowDialog();
             UpdateRecipeList();
         }
 
-        private void UpdateRecipeList()
+        private void UpdateRecipeList(List<Recipe> recipeList = null)
         {
-            List<Recipe> result = _recipeManager.GetRecipes();
-            recipeBindingSource2.DataSource = result;
-            recipeBindingSource2.ResetBindings(false);
+            if (recipeList == null)
+            {
+                List<Recipe> result = _mainForm.RecipeManager.GetRecipes();
+                recipeBindingSource2.DataSource = result;
+                recipeBindingSource2.ResetBindings(false);
+            }
+            else
+            {
+                recipeBindingSource2.DataSource = recipeList;
+                recipeBindingSource2.ResetBindings(false);
+            }
         }
 
-        private void addButton_Click(object sender, EventArgs e)
+
+        private void SearchButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void ingredientsBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void editButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SearchButton_Click_1(object sender, EventArgs e)
-        {
-            UpdateRecipeList();
+            string searchTerm = nameBox.Text.Trim().ToLower();
+            List<Recipe> result = _mainForm.RecipeManager.SearchRecipes(searchTerm);
+            UpdateRecipeList(result);
         }
 
         private void removeButton_Click(object sender, EventArgs e)
         {
             if (recipeslistBox.SelectedItem is Recipe selectedRecipe)
             {
-                _recipeManager.RemoveRecipe(selectedRecipe.Id);
+                _mainForm.RecipeManager.RemoveRecipe(selectedRecipe.Id);
                 UpdateRecipeList();
             }
             else
             {
                 MessageBox.Show("Будь ласка, виберіть рецепт для видалення.");
+            }
+        }
+
+        private void addButton_Click_1(object sender, EventArgs e)
+        {
+
+            if (recipeslistBox.SelectedItem is Recipe selectedRecipe)
+            {
+                _mainForm.MenuForm.AddRecipeToMenu(selectedRecipe);
+            }
+        }
+
+        private void recipeslistBox_DobleClick(object sender, EventArgs e)
+        {
+            if (recipeslistBox.SelectedItem is Recipe selectedRecipe)
+            {
+                EditRecipeForm editRecipeForm = new EditRecipeForm(selectedRecipe);
+                editRecipeForm.ShowDialog();
+                _mainForm.RecipeManager.SaveRecipes();
+                UpdateRecipeList();
             }
         }
     }

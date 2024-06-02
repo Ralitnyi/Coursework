@@ -1,13 +1,14 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.DirectoryServices;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Coursework.Models
 {
-    internal class Inventory
+    public class Inventory
     {
         private List<Ingredient> _ingredients;
 
@@ -22,6 +23,15 @@ namespace Coursework.Models
             _ingredients.Add(ingredient);
             SaveIngredients();
         }
+
+        public List<Ingredient> SearchIngredient(string searchTerm)
+        {
+            List<Ingredient> result = _ingredients
+            .Where(i => i.Name.StartsWith(searchTerm, StringComparison.OrdinalIgnoreCase))
+            .ToList();
+            return result;
+        }
+
 
         public void RemoveIngredient(int ingredientId)
         {
@@ -38,6 +48,23 @@ namespace Coursework.Models
             return _ingredients;
         }
 
+        public List<string> IsDontHaveIngredients(List<string> ingredientNames)
+        {
+            List<string> result = new List<string>();
+            foreach (var ing in ingredientNames)
+            {
+                if (_ingredients.Find(i => i.Name == ing) != null)
+                {
+                    continue;
+                }
+                else
+                {
+                    result.Add(ing);
+                }
+            }
+            return result;
+        }
+
         private void SaveIngredients()
         {
             string json = JsonConvert.SerializeObject(_ingredients, Formatting.Indented);
@@ -50,7 +77,6 @@ namespace Coursework.Models
             {
                 string json = File.ReadAllText("ingredients.json");
                 _ingredients = JsonConvert.DeserializeObject<List<Ingredient>>(json) ?? new List<Ingredient>();
-                //Ingredient._currentId = _ingredients.Max(i => i.Id) + 1; 
             }
         }
     }

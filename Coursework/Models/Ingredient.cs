@@ -6,46 +6,17 @@ using System.Threading.Tasks;
 
 namespace Coursework.Models
 {
-    internal class Ingredient
+    public class Ingredient: BaseIngredient
     {
-        private static int _currentId = 0;
-        private int _id;
-        private string _name;
         private decimal _price;
-        private int _quantity;
         private DateTime _expirationDate;
 
-        public Ingredient(string name, decimal price, int quantity, DateTime expirationDate)
+        public Ingredient(string name, decimal price, float quantity, DateTime expirationDate)
+            : base(name, quantity)
         {
-            Id = _currentId++;
-            Name = name;
             Price = price;
-            Quantity = quantity;
             ExpirationDate = expirationDate;
         }
-
-        public int Id
-        {
-            get { return _id; }
-            private set { _id = value; }
-        }
-
-        public string Name
-        {
-            get { return _name; }
-            set
-            {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    _name = value;
-                }
-                else
-                {
-                    throw new ArgumentException("Name cannot be null or empty.");
-                }
-            }
-        }
-
         public decimal Price
         {
             get { return _price; }
@@ -58,22 +29,6 @@ namespace Coursework.Models
                 else
                 {
                     throw new ArgumentException("Price cannot be negative.");
-                }
-            }
-        }
-
-        public int Quantity
-        {
-            get { return _quantity; }
-            set
-            {
-                if (value >= 0)
-                {
-                    _quantity = value;
-                }
-                else
-                {
-                    throw new ArgumentException("Quantity cannot be negative.");
                 }
             }
         }
